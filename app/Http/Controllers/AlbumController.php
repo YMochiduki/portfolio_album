@@ -38,7 +38,13 @@ class AlbumController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Album::create([
+            'user_id' => \Auth::user()->id,
+            'comment' => $request->comment,
+            'image' > $path,
+        ]);
+        
+        return redirect()->route('album.index');
     }
 
     /**
